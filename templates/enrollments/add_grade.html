@@ -12,7 +12,7 @@
                 {% csrf_token %}
                 
                 <div class="card">
-                    <div class="card-header bg-success text-white">
+                    <div class="card-header">
                         <h5 class="mb-0">Grade Entry</h5>
                     </div>
                     <div class="card-body">
@@ -48,7 +48,7 @@
                 </div>
                 
                 <div class="card mt-3">
-                    <div class="card-header bg-info text-white">
+                    <div class="card-header">
                         <h5 class="mb-0">Current Information</h5>
                     </div>
                     <div class="card-body">
@@ -74,6 +74,6 @@
 
 <style>
     .form-control, .form-select, textarea { margin-top: 5px; }
-    .invalid-feedback { color: #dc3545; font-size: 0.875em; }
+    .invalid-feedback { color: var(--lotus-d); font-size: 0.875em; }
 </style>
 {% endblock %}

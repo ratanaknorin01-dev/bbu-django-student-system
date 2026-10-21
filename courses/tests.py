@@ -100,3 +100,8 @@ class CourseViewsTest(TestCase):
         self.client.login(username='teacher', password='password123')
         response = self.client.get(reverse('courses:course_create'))
         self.assertEqual(response.status_code, 200)
+    # added 
+    def test_course_create_authenticated(self):
+        self.client.login(username='teacher', password='password123')
+        response = self.client.get(reverse('courses:course_create'))
+        self.assertEqual(response.status_code, 200)

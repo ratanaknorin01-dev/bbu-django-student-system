@@ -14,7 +14,7 @@
             <hr>
             
             <div class="card mb-4">
-                <div class="card-header bg-info text-white">
+                <div class="card-header">
                     <h5 class="mb-0">Academic Summary</h5>
                 </div>
                 <div class="card-body">
@@ -41,7 +41,7 @@
             <!-- Transcript Table -->
             <div class="table-responsive">
                 <table class="table table-striped table-bordered">
-                    <thead class="table-dark">
+                    <thead class="table-light">
                         <tr>
                             <th>Course Code</th>
                             <th>Course Title</th>
@@ -118,8 +118,8 @@
 <style>
     @media print {
         .btn { display: none; }
-        .navbar { display: none; }
-        .footer { display: none; }
+        .sidebar, .mobile-bar { display: none; }
+        .app-footer { display: none; }
         body { margin: 0; padding: 10px; }
         .table { font-size: 12px; }
     }
