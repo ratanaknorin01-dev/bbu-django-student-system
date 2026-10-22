@@ -30,7 +30,7 @@ def student_list(request):
         )
     
     students_qs = students_qs.order_by('student_id')
-    paginator = Paginator(students_qs, 20)
+    paginator = Paginator(students_qs, 1000)
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)
     

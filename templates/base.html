@@ -672,6 +672,95 @@
             background: var(--surface);
         }
 
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.6fr 1fr 1fr 1.2fr;
+            gap: 2rem;
+            padding: .5rem 0 1.4rem;
+            margin-bottom: 1rem;
+            border-bottom: 1px solid var(--line);
+        }
+
+        .footer-col h6 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: .78rem;
+            letter-spacing: .12em;
+            color: var(--brand-d);
+            margin-bottom: .8rem;
+        }
+
+        .footer-col p {
+            margin: 0 0 .6rem;
+            font-size: .88rem;
+            color: var(--muted);
+        }
+
+        .footer-links {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .footer-links li {
+            padding: .2rem 0;
+        }
+
+        .footer-links a {
+            color: #a5f3fc;
+            text-decoration: none;
+            font-size: .9rem;
+        }
+
+        .footer-links a:hover {
+            color: var(--brand-d);
+            text-shadow: var(--glow);
+        }
+
+        .footer-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: .4rem;
+        }
+
+        .footer-tags span {
+            padding: .2rem .55rem;
+            border: 1px solid rgba(6, 182, 212, .4);
+            border-radius: 4px;
+            background: rgba(6, 182, 212, .08);
+            color: #a5f3fc;
+            font-size: .75rem;
+            font-weight: 600;
+        }
+
+        .footer-status {
+            display: inline-flex;
+            align-items: center;
+            gap: .5rem;
+            margin-top: .4rem;
+            font-size: .8rem;
+            color: #a7f3d0;
+        }
+
+        .footer-status i {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--leaf);
+            box-shadow: 0 0 8px var(--leaf);
+        }
+
+        @media (max-width: 991.98px) {
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 575.98px) {
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
         @media (prefers-reduced-motion: reduce) {
 
             .sidebar,
@@ -747,6 +836,50 @@
         </main>
 
         <footer class="app-footer">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h6>// ABOUT</h6>
+                    <p><strong style="color:#fff;">📚 Student Management System</strong></p>
+                    <p>A Django-powered platform for managing students, courses and enrollments at Build Bright University, with a bilingual Khmer / English interface.</p>
+                    <span class="footer-status"><i></i> All systems online</span>
+                </div>
+                <div class="footer-col">
+                    <h6>// QUICK LINKS</h6>
+                    <ul class="footer-links">
+                        <li><a href="{% url 'home' %}">🏠 Home</a></li>
+                        <li><a href="{% url 'students:student_list' %}">👥 Students</a></li>
+                        <li><a href="{% url 'courses:course_list' %}">📖 Courses</a></li>
+                        <li><a href="{% url 'enrollments:enrollment_list' %}">✍️ Enrollments</a></li>
+                        {% if user.is_authenticated %}
+                        <li><a href="/admin/">⚙️ Admin Panel</a></li>
+                        {% else %}
+                        <li><a href="{% url 'login' %}">🔑 Login</a></li>
+                        {% endif %}
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h6>// FEATURES</h6>
+                    <ul class="footer-links">
+                        <li>🔎 Smart search</li>
+                        <li>📊 Live dashboard</li>
+                        <li>🗓️ Attendance (concept)</li>
+                        <li>🏆 Grades &amp; GPA (concept)</li>
+                        <li>🛡️ Secure access</li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h6>// TECH STACK</h6>
+                    <div class="footer-tags">
+                        <span>Django</span>
+                        <span>Python</span>
+                        <span>Bootstrap 5</span>
+                        <span>REST API</span>
+                        <span>HTML5 / CSS3</span>
+                    </div>
+                    <p class="mt-3">🌐 Khmer &amp; English · 📱 Fully responsive</p>
+                </div>
+            </div>
+
             © 2026 Build Bright University - Student Management System
             <p style="color: white; font-size: 1.2rem">បង្កើតដោយ ៖ <span style="font-weight: bold;">គង់ រតនៈនរិន្ទ </span> | ID: SR26786 | ថ្នាក់: [A1IT-B103]</p>
 
